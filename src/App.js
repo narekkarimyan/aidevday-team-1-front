@@ -3,7 +3,8 @@ import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import WeatherForm from './WeatherForm';
 import WeatherDashboard from './WeatherDashboard';
-import RegistrationForm from './RegistrationForm'; // Import the RegistrationForm component
+import RegistrationForm from './RegistrationForm';
+import LoginForm from './LoginForm'; // Import the LoginForm component
 
 function App() {
   const [userPreferences, setUserPreferences] = useState([]);
@@ -26,6 +27,9 @@ function App() {
             <li>
               <Link to="/register">Register</Link>
             </li>
+            <li>
+              <Link to="/login">Login</Link>
+            </li>
           </ul>
         </nav>
 
@@ -38,8 +42,9 @@ function App() {
             path="/dashboard"
             element={<WeatherDashboard userPreferences={userPreferences} />}
           />
-          {/* Add a new route for the RegistrationForm */}
           <Route path="/register" element={<RegistrationForm />} />
+          {/* Add a new route for the LoginForm */}
+          <Route path="/login" element={<LoginForm />} />
         </Routes>
       </div>
     </Router>
