@@ -6,10 +6,10 @@ import Modal from "./Modal";
 
 const RegistrationForm = () => {
     const [formData, setFormData] = useState({
-        firstName: '',
-        lastName: '',
-        email: '',
-        password: '',
+        firstName: 'User',
+        lastName: 'Testovich',
+        email: 'user@test.com',
+        password: '1234',
     });
     const [isExpiryModalShown, setVisible] = useState(false)
 
