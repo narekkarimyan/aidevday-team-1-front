@@ -6,6 +6,7 @@ import { useNavigate } from 'react-router-dom';
 function WeatherForm({ updateUserPreferences }) {
 	const [destination, setDestination] = useState('');
 	const [travelDate, setTravelDate] = useState('');
+	const [endTravelDate, setEndTravelDate] = useState('');
 	const navigate = useNavigate();
 
 	const handleSubmit = async (e) => {
@@ -43,11 +44,19 @@ function WeatherForm({ updateUserPreferences }) {
 					/>
 				</label>
 				<label>
-					Travel Date:
+					Start Date:
 					<input
 						type="text"
 						value={travelDate}
 						onChange={(e) => setTravelDate(e.target.value)}
+					/>
+				</label>
+				<label>
+					End Date:
+					<input
+						type="text"
+						value={travelDate}
+						onChange={(e) => setEndTravelDate(e.target.value)}
 					/>
 				</label>
 				<button type="submit">Submit</button>
