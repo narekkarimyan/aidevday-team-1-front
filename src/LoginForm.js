@@ -4,8 +4,8 @@ import { weatherWiseApi } from "./WeatherWiseApiClient";
 
 const LoginForm = ({ setUserData }) => {
 	const [formData, setFormData] = useState({
-		email: '',
-		password: '',
+		email: 'user@test.com',
+		password: '1234',
 	});
 
 	const handleChange = (e) => {
