@@ -29,7 +29,7 @@ import {Home} from "./Home"; // Import the LoginForm component
                 <Routes>
                     <Route path="/register" element={<RegistrationForm/>}/>
                     {/* Add a new route for the LoginForm */}
-                    <Route path="/" element={<LoginForm/>}/>
+                    <Route path="/" element={<LoginForm setUserData={setUser}/>}/>
                 </Routes>
             </div>
         </Router>);

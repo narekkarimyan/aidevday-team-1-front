@@ -1,0 +1,23 @@
+{
+  "name": "playwright_tests",
+  "version": "1.0.0",
+  "description": "This repo contain Web UI/API/ETL tests for AI project.",
+  "main": "index.js",
+  "scripts": {
+    "test:e2e": "transform-paths && flow-remove-types dist/ -d dist/ && NODE_TLS_REJECT_UNAUTHORIZED=0 playwright test dist",
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@playwright/test": "1.36.2",
+    "@travel-frontend/transform-paths": "0.1.0",
+    "@zerostep/playwright": "^0.1.5",
+    "date-fns": "^2.29.3",
+    "dotenv": "^16.1.4",
+    "flow-bin": "^0.184.0",
+    "flow-remove-types": "^2.185.0",
+    "jest-extended": "^3.0.2",
+    "lodash": "^4.17.21"
+  }
+}
