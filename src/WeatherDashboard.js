@@ -1,5 +1,6 @@
 // WeatherDashboard.js
 import React, { useEffect, useState } from 'react';
+import './WeatherDashboard.css'; // Import the CSS file for WeatherDashboard
 
 function WeatherDashboard({ userPreferences }) {
 	const [weatherData, setWeatherData] = useState([]);
@@ -22,17 +23,17 @@ function WeatherDashboard({ userPreferences }) {
 	}, [userPreferences]);
 
 	return (
-		<div>
+		<div className="weather-dashboard-container">
 			<h2>Weather Dashboard</h2>
 			{/* Display weather information based on userPreferences */}
 			{userPreferences.map((preference, index) => (
-				<div key={index}>
-					<p>Destination: {preference.destination}</p>
-					<p>Start Date: {preference.travelDate}</p>
-					<p>End Date: {preference.endTravelDate}</p>
+				<div key={index} className="destination-card">
+					<p className="destination-info">Destination: {preference.destination}</p>
+					<p className="destination-info">Start Date: {preference.travelDate}</p>
+					<p className="destination-info">End Date: {preference.endTravelDate}</p>
 					{/* Display demo weather data for each destination */}
 					{weatherData[index] && (
-						<div>
+						<div className="weather-info">
 							<p>Current Temperature: {weatherData[index].currentTemperature}°C</p>
 							<p>Forecast: {weatherData[index].forecast}</p>
 							{/* Add more demo weather information as needed */}
