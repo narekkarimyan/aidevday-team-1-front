@@ -1,24 +1,33 @@
 // WeatherForm.js
 import React, { useState } from 'react';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
-function WeatherForm({ userPreferences, updateUserPreferences }) {
+function WeatherForm({ updateUserPreferences }) {
 	const [destination, setDestination] = useState('');
 	const [travelDate, setTravelDate] = useState('');
+	const navigate = useNavigate();
 
 	const handleSubmit = async (e) => {
 		e.preventDefault();
 
-		// Make a request to your backend to save user preferences
-		/*const response = await axios.post('http://localhost:3001/preferences', {
-			destination,
-			travelDate,
-		});*/
+		try {
+			// Make a request to your backend to save user preferences
+			// but for now, use a fake response
+			const response =  {
+				data: {
+					preferences: {
+						destination,
+						travelDate,
+					},
+				},
+			};
 
-		// TODO use backend above
-		const response = { data: { preferences: { destination, travelDate } } };
-
-		updateUserPreferences([response.data.preferences]);
+			updateUserPreferences([response.data.preferences]);
+			navigate('/dashboard'); // Navigate to the dashboard after submitting the form
+		} catch (error) {
+			console.error('Error submitting form:', error);
+		}
 	};
 
 	return (
