@@ -1,7 +1,8 @@
 // LoginForm.js
 import React, { useState } from 'react';
+import { weatherWiseApi } from "./WeatherWiseApiClient";
 
-const LoginForm = () => {
+const LoginForm = ({ setUserData }) => {
 	const [formData, setFormData] = useState({
 		email: '',
 		password: '',
@@ -17,10 +18,10 @@ const LoginForm = () => {
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
-		// Handle login logic here (e.g., send data to the server)
-
-		// For demonstration purposes, log the form data to the console
-		console.log('Submitted Login Form Data:', formData);
+		// call loginUser with form data
+		weatherWiseApi.loginUser(formData)
+			.then(response => setUserData(response.data))
+			.catch(error => console.error(error));
 	};
 
 	return (

@@ -37,7 +37,7 @@ import {Home} from "./Home"; // Import the LoginForm component
     }
 
     return (
-        <div className="main">
+        <div>
             <Router>
                 <Home/>
             </Router>
