@@ -28,12 +28,12 @@ const RegistrationForm = () => {
         // For demonstration purposes, log the form data to the console
         console.log('Submitted Form Data:', formData);
         try {
-            const response = await axios.post(`${baseUrl}/users/register`, {
-                username: `${formData.firstName} ${formData.lastName}`,
-                email: formData.email,
-                password: formData.password,
-            });
-            console.log(response);
+            // const response = await axios.post(`${baseUrl}/users/register`, {
+            //     username: `${formData.firstName} ${formData.lastName}`,
+            //     email: formData.email,
+            //     password: formData.password,
+            // });
+            // console.log(response);
             setVisible(true)
             setTimeout(
                 function () {
