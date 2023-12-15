@@ -1,6 +1,7 @@
 // WeatherDashboard.js
 import React, { useEffect, useState } from 'react';
-import './WeatherDashboard.css'; // Import the CSS file for WeatherDashboard
+import './WeatherDashboard.css';
+import WebSocketClient from "./WebsocketClient"; // Import the CSS file for WeatherDashboard
 
 function WeatherDashboard({ userPreferences }) {
 	const [weatherData, setWeatherData] = useState([]);
@@ -41,6 +42,7 @@ function WeatherDashboard({ userPreferences }) {
 					)}
 				</div>
 			))}
+			<WebSocketClient />
 		</div>
 	);
 }
