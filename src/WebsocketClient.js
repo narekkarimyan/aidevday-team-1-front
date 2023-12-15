@@ -36,16 +36,18 @@ const WebSocketClient = () => {
 
 	// Function to send a message to the WebSocket server
 	const sendMessage = () => {
-		if (webSocket) {
+		if (webSocket)
+		{
 			const message = 'Hello, WebSocket server!';
 			webSocket.send(message);
 		}
 	};
 
+	// <button onClick={sendMessage}>Send Message</button>
+
 	return (
 		<div>
 			<h1>WebSocket Client</h1>
-			<button onClick={sendMessage}>Send Message</button>
 			<div>
 				<h2>Received Messages:</h2>
 				<ul>
