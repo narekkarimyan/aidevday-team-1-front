@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 
-function WeatherForm({ updateUserPreferences }) {
+function WeatherForm({ userPreferences, updateUserPreferences }) {
 	const [destination, setDestination] = useState('');
 	const [travelDate, setTravelDate] = useState('');
 	const [endTravelDate, setEndTravelDate] = useState('');
@@ -20,11 +20,12 @@ function WeatherForm({ updateUserPreferences }) {
 					preferences: {
 						destination,
 						travelDate,
+						endTravelDate,
 					},
 				},
 			};
 
-			updateUserPreferences([response.data.preferences]);
+			updateUserPreferences([...userPreferences, response.data.preferences]);
 			navigate('/dashboard'); // Navigate to the dashboard after submitting the form
 		} catch (error) {
 			console.error('Error submitting form:', error);
@@ -55,7 +56,7 @@ function WeatherForm({ updateUserPreferences }) {
 					End Date:
 					<input
 						type="text"
-						value={travelDate}
+						value={endTravelDate}
 						onChange={(e) => setEndTravelDate(e.target.value)}
 					/>
 				</label>

@@ -28,7 +28,8 @@ function WeatherDashboard({ userPreferences }) {
 			{userPreferences.map((preference, index) => (
 				<div key={index}>
 					<p>Destination: {preference.destination}</p>
-					<p>Travel Date: {preference.travelDate}</p>
+					<p>Start Date: {preference.travelDate}</p>
+					<p>End Date: {preference.endTravelDate}</p>
 					{/* Display demo weather data for each destination */}
 					{weatherData[index] && (
 						<div>
