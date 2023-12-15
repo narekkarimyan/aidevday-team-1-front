@@ -22,6 +22,8 @@ const LoginForm = ({ setUserData }) => {
 		weatherWiseApi.loginUser(formData)
 			.then(response => setUserData(response.data))
 			.catch(error => console.error(error));
+
+		setUserData(1);
 	};
 
 	return (
