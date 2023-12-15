@@ -1,14 +1,12 @@
 // App.js
 import React, {useState} from 'react';
 import {BrowserRouter as Router, Routes, Route, Link} from 'react-router-dom';
-import WeatherForm from './WeatherForm';
-import WeatherDashboard from './WeatherDashboard';
 import RegistrationForm from './RegistrationForm';
 import LoginForm from './LoginForm';
-import {Home} from "./Home"; // Import the LoginForm component
+import {Home} from "./Home";
 
 
- function App() {
+function App() {
     const [userData, setUser] = useState(null);
 
 
