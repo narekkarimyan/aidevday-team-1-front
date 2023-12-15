@@ -4,9 +4,9 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 
 function WeatherForm({ userPreferences, updateUserPreferences }) {
-	const [destination, setDestination] = useState('');
-	const [travelDate, setTravelDate] = useState('');
-	const [endTravelDate, setEndTravelDate] = useState('');
+	const [destination, setDestination] = useState('Mallorca');
+	const [travelDate, setTravelDate] = useState('1.1.24');
+	const [endTravelDate, setEndTravelDate] = useState('6.1.24');
 	const navigate = useNavigate();
 
 	const handleSubmit = async (e) => {
