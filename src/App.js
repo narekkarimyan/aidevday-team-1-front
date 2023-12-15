@@ -7,11 +7,7 @@ import RegistrationForm from './RegistrationForm';
 import LoginForm from './LoginForm'; // Import the LoginForm component
 
 function App() {
-  const [userPreferences, setUserPreferences] = useState([]);
-
-  const updateUserPreferences = (newPreferences) => {
-    setUserPreferences(newPreferences);
-  };
+    const [userData, setUser] = useState(null);
 
   return (
     <Router>
