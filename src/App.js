@@ -33,19 +33,21 @@ function App() {
           </ul>
         </nav>
 
-        <Routes>
-          <Route
-            path="/"
-            element={<WeatherForm userPreferences={userPreferences} updateUserPreferences={updateUserPreferences} />}
-          />
-          <Route
-            path="/dashboard"
-            element={<WeatherDashboard userPreferences={userPreferences} />}
-          />
-          <Route path="/register" element={<RegistrationForm />} />
-          {/* Add a new route for the LoginForm */}
-          <Route path="/login" element={<LoginForm />} />
-        </Routes>
+        <div className="main">
+          <Routes>
+            <Route
+              path="/"
+              element={<WeatherForm userPreferences={userPreferences} updateUserPreferences={updateUserPreferences} />}
+            />
+            <Route
+              path="/dashboard"
+              element={<WeatherDashboard userPreferences={userPreferences} />}
+            />
+            <Route path="/register" element={<RegistrationForm />} />
+            {/* Add a new route for the LoginForm */}
+            <Route path="/login" element={<LoginForm />} />
+          </Routes>
+        </div>
       </div>
     </Router>
   );
