@@ -21,18 +21,12 @@ jobs:
       - name: Install Dependencies
         run: npm install
 
-      - name: Temporarily Disable ESLint
-        run: npm set-script lint "echo 'Linting is temporarily disabled'"
-
       - name: Build React App
         run: npm run build
 
-      - name: Re-enable ESLint
-        run: npm set-script lint "eslint ."
-
       - name: Deploy to S3
         run: |
-          aws s3 sync build/ s3://aidevday-team-1-frontend
+          aws s3 sync build/ s3://aidevday-team-1-frontend --region eu-central-1
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
