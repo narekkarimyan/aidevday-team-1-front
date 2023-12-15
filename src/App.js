@@ -24,11 +24,13 @@ function App() {
 
                     </ul>
                 </nav>
-                <Routes>
-                    <Route path="/register" element={<RegistrationForm/>}/>
-                    {/* Add a new route for the LoginForm */}
-                    <Route path="/" element={<LoginForm setUserData={setUser}/>}/>
-                </Routes>
+                <div className="main">
+                    <Routes>
+                        <Route path="/register" element={<RegistrationForm/>}/>
+                        {/* Add a new route for the LoginForm */}
+                        <Route path="/" element={<LoginForm setUserData={setUser}/>}/>
+                    </Routes>
+                </div>
             </div>
         </Router>);
 

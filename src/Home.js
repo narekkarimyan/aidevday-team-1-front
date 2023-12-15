@@ -23,17 +23,19 @@ export const Home = (props) => {
                 </ul>
             </nav>
 
-            <Routes>
-                <Route
-                    path="/"
-                    element={<WeatherForm userPreferences={userPreferences}
-                                          updateUserPreferences={updateUserPreferences}/>}
-                />
-                <Route
-                    path="/dashboard"
-                    element={<WeatherDashboard userPreferences={userPreferences}/>}
-                />
-            </Routes>
+            <div className="main">
+                <Routes>
+                    <Route
+                        path="/"
+                        element={<WeatherForm userPreferences={userPreferences}
+                                              updateUserPreferences={updateUserPreferences}/>}
+                    />
+                    <Route
+                        path="/dashboard"
+                        element={<WeatherDashboard userPreferences={userPreferences}/>}
+                    />
+                </Routes>
+            </div>
         </div>
     );
 }
